@@ -1,67 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+### Introdução:
+Este projeto foi desenvolvido como parte do processo de candidatura para a vaga de desenvolvedor.
+O objetivo do projeto, que é criar uma API Restfull para realizar operações CRUD (Criar, Ler, Atualizar, Deletar) 
+em registros de usuários.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Tecnologias Utilizadas:
+- **Docker:** Docker foi selecionado para containerizar o aplicativo, o que permite um ambiente de desenvolvimento isolado.
+- **Nginx:** Nginx foi selecionado como um proxy reverso para direcionar solicitações HTTP para o aplicativo Laravel.
+- **Laravel:** Laravel foi selecionado para construir o aplicativo devido à sua facilidade de uso, recursos de segurança
+e capacidade de construir rapidamente.
+- **MySQL:** MySQL foi selecionado como o sistema de gerenciamento de banco de dados para armazenar as informações de usuário.
 
-## About Laravel
+### Clean Architecture:
+O projeto foi desenvolvido seguindo os princípios da Clean Architecture. Isso envolve a separação das camadas de aplicação em:
+- **Entidades:** Entidades de negócios, como a entidade "Usuário" no contexto deste aplicativo.
+- **Casos de Uso:** Implementação dos casos de uso, que representam as operações CRUD.
+- **Ui/Controladores:** Os controladores foram criados para lidar com as solicitações HTTP e interagir com os casos de uso.
+- **Infrastrucuture:** Utilizado na camada de Frameworks e Drivers, especialmente para lidar com a infraestrutura web e banco de dados.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Estrutura do Projeto:
+Importante: 
+- **src**
+  - **Application:** Casos de Uso
+  - **Domain:** Entidades
+  - **Infrastructure:** Persistência no banco de dados. 
+  - **Ui:** Controllers
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Funcionalidades:
+- **[GET] - [Listar todos usuários com paginação]** http://localhost:8000/api/v1/users?page=1&total_page=2 
+- **[GET] - [Listar usuário pelo ID]** http://localhost:8000/api/v1/users/{id}
+- **[POST] - [Criar usuário]** http://localhost:8000/api/v1/users 
+- **[PUT] - [Atualizar usuário pelo ID]** http://localhost:8000/api/v1/users/{id} 
+- **[DELETE] - [Excluir usuário pelo ID]** http://localhost:8000/api/v1/users/{id} 
 
-## Learning Laravel
+Obs: Regras para criação/atualização segue o que foi mencionado no desafio.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Testes:
+- Testes automatizados para garantir a qualidade do código e o funcionamento adequado do aplicativo.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Aprendizados:
+- Implementação da Clean Architecture.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Conclusão:
+Em resumo, este projeto demonstra a minha capacidade de desenvolver e implementar uma aplicação robusta de CRUD 
+de usuários utilizando tecnologias modernas e boas práticas de desenvolvimento. A escolha de Docker como plataforma
+de contêinerização proporcionou um ambiente de desenvolvimento consistente, enquanto o uso do Laravel 
+agilizou a criação de recursos sólidos e seguros.
 
-## Laravel Sponsors
+Além disso, a implementação da Clean Architecture ajudou a manter uma clara separação de preocupações em todas 
+as camadas do aplicativo, tornando-o altamente testável e adaptável para futuros aprimoramentos.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+A integração do MySQL para armazenamento de dados e o Nginx como servidor web e proxy reverso para distribuição de 
+tráfego aprimoraram o desempenho, a segurança e a confiabilidade da aplicação.
 
-### Premium Partners
+Este projeto é um reflexo do meu comprometimento em desenvolver soluções de alta qualidade e escaláveis, seguindo as melhores práticas.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Como utilizar:
+Para iniciar os serviços, clone o projeto e abra um terminal na raiz e execute o seguinte comando via Makefile:
 
-## Contributing
+### Com Makefile
+- Para construir as imagens do Docker Compose:
+```make
+make build
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Para iniciar o Docker Compose:
+```make
+make up
+```
 
-## Code of Conduct
+- Para criar as tabelas:
+```make
+make setup-database
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Para parar o Docker Compose:
+```make
+make down
+```
 
-## Security Vulnerabilities
+- O comando make tests é utilizado para executar os testes dentro do container
+```make
+make test
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Para visualizar outras opções de comandos
+```make
+make help
+```
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# iP4y
+### Observação:
+Este repositório é apenas a parte do backend, para realizar a integração com o aplicativo React Native, segue as instruções desse [repositório](https://github.com/matheussouzajose/iP4y-App):
